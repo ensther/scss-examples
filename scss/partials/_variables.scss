@@ -1,0 +1,37 @@
+/*The _ character indicates that this file is a partial file*/
+//Dark, light, default
+$theme: Dark;
+
+//mc, bk, picu
+$brand: picu;
+
+$text-font: "Alegreya Sans", Arial, sans-serif;
+$headline-font: 'Titillium Web', Georgia, serif;
+
+$text-color: #222;
+$theme-color: #170a48;
+$secondary-color: #f27731;
+$ternary-color: #ccf962;
+$link-color: $secondary-color;
+$menu-item-color: #fff;
+
+@if $theme == Dark {
+    $text-color: #000;
+    $theme-color: #22222a;
+    $secondary-color: #42424a;
+    $ternary-color: #c24721;
+    $link-color: $secondary-color;
+    $menu-item-color: #fff;
+}@else if $theme == Light {
+    $text-color: #000;
+    $theme-color: #fff;
+    $secondary-color: #372a27;
+    $ternary-color: #b9da63;
+    $link-color: $secondary-color;
+    $menu-item-color: #fff;
+}
+
+$content-width: 960px;
+$footer-height: 90px;
+
+$col: col-width($columns: 8);

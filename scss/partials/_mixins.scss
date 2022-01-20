@@ -1,0 +1,98 @@
+@mixin google-fonts($font){
+  $font: unquote($font);
+  @import url(https://fonts.googleapis.com/css?family=#{$font});
+}
+
+@mixin center-flex-element {
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+}
+  
+@mixin flex-grow-33 {
+  flex-grow: 1;
+  width: 33%;
+}
+  
+@mixin warning{
+  background-color: $link-color;
+  color: #3c1f1f;
+  border: unset;
+
+  &:hover{
+    background-color: lighten($color: $link-color , $amount: 10%);
+  }
+}
+
+@mixin large-text{
+  font: {
+    size: 22px;
+    weight: bold;
+  }
+}
+
+@mixin rounded($radius:10px){
+  border-radius: $radius;
+}
+
+@mixin box($radius: 8px, $border: unset){
+  @include rounded($radius);
+  border: $border;
+}
+
+@mixin fancy-links{
+  a{
+    font: {
+      style: italic;
+    }
+    text-decoration: none;
+  }
+}
+  
+@mixin box-shadow($shadows...){//Si no sabemos el número de argumentos pasamos un arrray
+  box-shadow: $shadows;
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+}
+
+@mixin apply-to-ie-6{
+  * html{
+    @content;
+  }
+}
+
+@mixin sm-screen{
+  @media (max-width: 960px){
+    @content;
+  }
+}
+
+@mixin sm-width{
+  @include sm-screen{
+    width: auto;
+  }
+}
+
+@mixin sm-font-size{
+  @include sm-screen{
+    font-size: 1.5rem;
+  }
+}
+
+@mixin mc{
+  @if $brand == mc{
+    @content;
+  }
+}
+
+@mixin bk{
+  @if $brand == bk{
+    @content;
+  }
+}
+
+@mixin picu{
+  @if $brand == picu{
+    @content;
+  }
+}
